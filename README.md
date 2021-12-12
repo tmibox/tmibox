@@ -1,14 +1,45 @@
 # Tmibox
 
-To start your Phoenix server:
+## Dependencies
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.setup`
-  * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
+* Elixir 1.12.3
+* Phoenix 1.6.0
+  * Surface UI (UI Component library for Phoenix)
+  * Phoenix LiveView
+* Postgres
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+## Usage
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+### Command line
+
+* 라이브러리 설치
+
+```bash
+mix deps.get
+```
+
+* 데이터베이스 초기화하기
+
+```bash
+mix ecto.setup
+```
+
+* 서버 실행
+
+```bash
+mix phx.server
+```
+
+* 테스트 실행
+
+```bash
+mix test
+```
+
+### Debugging Tip
+
+* 관리자 화면 들어가기 : `localhost:4000/admin`
+* UI 컴포넌트 확인하기 : `localhost:4000/catalogue`
 
 ## Learn more
 
