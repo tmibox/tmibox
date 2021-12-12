@@ -1,7 +1,6 @@
 defmodule TmiboxWeb.CardControllerTest do
   use TmiboxWeb.ConnCase
-
-  import Tmibox.ZettelkastenFixtures
+  import Tmibox.Factory
 
   @create_attrs %{content: "some content", title: "some title"}
   @update_attrs %{content: "some updated content", title: "some updated title"}
@@ -78,7 +77,7 @@ defmodule TmiboxWeb.CardControllerTest do
   end
 
   defp create_card(_) do
-    card = card_fixture()
+    card = insert(:card)
     %{card: card}
   end
 end

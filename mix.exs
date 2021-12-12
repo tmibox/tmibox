@@ -25,7 +25,7 @@ defmodule Tmibox.MixProject do
   end
 
   # Specifies which paths to compile per environment.
-  defp elixirc_paths(:test), do: ["lib", "test/support"]
+  defp elixirc_paths(:test), do: ["lib", "test/support", "test/factories"]
   defp elixirc_paths(_), do: ["lib"]
 
   # Specifies your project dependencies.
@@ -51,7 +51,8 @@ defmodule Tmibox.MixProject do
       {:plug_cowboy, "~> 2.5"},
       {:credo, "~> 1.6", only: [:dev, :test], runtime: false},
       # See https://github.com/aesmail/kaffy/issues/217
-      {:kaffy, git: "https://github.com/teamwalnut/kaffy", ref: "2934d96b3c414256c1add6f6ab22de63b0abff0b"}
+      {:kaffy, git: "https://github.com/teamwalnut/kaffy", ref: "2934d96b3c414256c1add6f6ab22de63b0abff0b"},
+      {:ex_machina, "~> 2.7.0", only: :test},
     ]
   end
 
