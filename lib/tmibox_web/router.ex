@@ -18,6 +18,7 @@ defmodule TmiboxWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    resources "/cards", CardController
   end
 
   # Other scopes may use custom stacks.
