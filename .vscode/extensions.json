@@ -1,0 +1,19 @@
+{
+  "recommendations": [
+    // Elixir Specific Extensions
+    "mjmcloug.vscode-elixir",
+    "JakeBecker.elixir-ls",
+    "hbenl.vscode-test-explorer",
+    "connorshea.vscode-test-explorer-status-bar",
+    "pantajoe.vscode-elixir-credo",
+    "msaraiva.surface",
+
+    // editorconfig for source code formatting
+    "editorconfig.editorconfig",
+
+    // helps code formatting
+    "shardulm94.trailing-spaces",
+    "coenraads.bracket-pair-colorizer-2",
+    "oderwat.indent-rainbow"
+  ]
+}
