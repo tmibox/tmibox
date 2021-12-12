@@ -47,6 +47,11 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
+config :surface, :components, [
+  {Surface.Components.Form.ErrorTag,
+   default_translator: {TmiboxWeb.ErrorHelpers, :translate_error}}
+]
+
 config :kaffy,
   admin_title: "Tmibox Admin",
   otp_app: :tmibox,

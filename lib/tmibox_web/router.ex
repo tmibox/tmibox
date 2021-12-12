@@ -1,6 +1,8 @@
 defmodule TmiboxWeb.Router do
   use TmiboxWeb, :router
 
+  import Surface.Catalogue.Router
+
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
@@ -19,6 +21,7 @@ defmodule TmiboxWeb.Router do
 
     get "/", PageController, :index
     resources "/cards", CardController
+    live "/demo", Demo
   end
 
   # Other scopes may use custom stacks.
@@ -53,6 +56,13 @@ defmodule TmiboxWeb.Router do
       pipe_through :browser
 
       forward "/mailbox", Plug.Swoosh.MailboxPreview
+    end
+  end
+
+  if Mix.env() == :dev do
+    scope "/" do
+      pipe_through :browser
+      surface_catalogue("/catalogue")
     end
   end
 end

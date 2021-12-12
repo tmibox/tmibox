@@ -7,7 +7,7 @@ defmodule Tmibox.MixProject do
       version: "0.1.0",
       elixir: "~> 1.12",
       elixirc_paths: elixirc_paths(Mix.env()),
-      compilers: [:gettext] ++ Mix.compilers(),
+      compilers: [:gettext] ++ Mix.compilers() ++ [:surface],
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
       deps: deps()
@@ -26,6 +26,7 @@ defmodule Tmibox.MixProject do
 
   # Specifies which paths to compile per environment.
   defp elixirc_paths(:test), do: ["lib", "test/support", "test/factories"]
+  defp elixirc_paths(:dev), do: ["lib"] ++ catalogues()
   defp elixirc_paths(_), do: ["lib"]
 
   # Specifies your project dependencies.
@@ -51,8 +52,12 @@ defmodule Tmibox.MixProject do
       {:plug_cowboy, "~> 2.5"},
       {:credo, "~> 1.6", only: [:dev, :test], runtime: false},
       # See https://github.com/aesmail/kaffy/issues/217
-      {:kaffy, git: "https://github.com/teamwalnut/kaffy", ref: "2934d96b3c414256c1add6f6ab22de63b0abff0b"},
+      {:kaffy,
+       git: "https://github.com/teamwalnut/kaffy", ref: "2934d96b3c414256c1add6f6ab22de63b0abff0b"},
       {:ex_machina, "~> 2.7.0", only: :test},
+      {:surface, "~> 0.6.0"},
+      {:surface_formatter, "~> 0.6.0"},
+      {:surface_catalogue, "~> 0.2.0"}
     ]
   end
 
@@ -69,6 +74,12 @@ defmodule Tmibox.MixProject do
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
       "assets.deploy": ["esbuild default --minify", "phx.digest"]
+    ]
+  end
+
+  def catalogues do
+    [
+      "priv/catalogue"
     ]
   end
 end
