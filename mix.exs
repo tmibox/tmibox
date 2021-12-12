@@ -49,7 +49,9 @@ defmodule Tmibox.MixProject do
       {:gettext, "~> 0.18"},
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
-      {:credo, "~> 1.6", only: [:dev, :test], runtime: false}
+      {:credo, "~> 1.6", only: [:dev, :test], runtime: false},
+      # See https://github.com/aesmail/kaffy/issues/217
+      {:kaffy, git: "https://github.com/teamwalnut/kaffy", ref: "2934d96b3c414256c1add6f6ab22de63b0abff0b"}
     ]
   end
 

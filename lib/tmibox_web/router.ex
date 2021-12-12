@@ -36,6 +36,8 @@ defmodule TmiboxWeb.Router do
   if Mix.env() in [:dev, :test] do
     import Phoenix.LiveDashboard.Router
 
+    use Kaffy.Routes, scope: "/admin", pipe_through: [:kaffy_browser]
+
     scope "/" do
       pipe_through :browser
       live_dashboard "/dashboard", metrics: TmiboxWeb.Telemetry
