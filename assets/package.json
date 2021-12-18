@@ -2,6 +2,7 @@
   "dependencies": {
     "alpinejs": "^3.7.0",
     "autoprefixer": "^10.4.0",
+    "daisyui": "^1.16.6",
     "postcss": "^8.4.5",
     "postcss-cli": "^9.1.0",
     "postcss-import": "^14.0.2",
