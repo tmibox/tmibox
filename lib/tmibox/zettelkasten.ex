@@ -35,7 +35,7 @@ defmodule Tmibox.Zettelkasten do
       ** (Ecto.NoResultsError)
 
   """
-  def get_card!(id), do: Repo.get!(Card, id)
+  def get_card(id), do: Repo.get(Card, id)
 
   @doc """
   Creates a card.
