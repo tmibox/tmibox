@@ -19,9 +19,12 @@ defmodule TmiboxWeb.Router do
   scope "/", TmiboxWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
-    resources "/cards", CardController
     live "/demo", Demo
+  end
+
+  scope "/", TmiboxWeb.Pages do
+    live "/cards/:id", CardPage
+    live "/", CardsPage
   end
 
   # Other scopes may use custom stacks.
