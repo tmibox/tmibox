@@ -12,6 +12,10 @@ defmodule TmiboxWeb.Router do
     plug :put_secure_browser_headers
   end
 
+  pipeline :liveview do
+    plug :put_root_layout, {TmiboxWeb.LayoutView, :live}
+  end
+
   pipeline :api do
     plug :accepts, ["json"]
   end
@@ -23,6 +27,8 @@ defmodule TmiboxWeb.Router do
   end
 
   scope "/", TmiboxWeb.Pages do
+    pipe_through [:browser, :liveview]
+
     live "/cards/:id", CardPage
     live "/", CardsPage
   end

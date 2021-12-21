@@ -2,6 +2,8 @@ defmodule TmiboxWeb.Pages.CardsPage do
   @moduledoc false
   use Surface.LiveView
   alias Tmibox.Zettelkasten
+
+  alias TmiboxWeb.Components.Layouts.AppLayout
   alias TmiboxWeb.Components.TmiCard
 
   data cards, :list
@@ -9,7 +11,9 @@ defmodule TmiboxWeb.Pages.CardsPage do
   @impl true
   def render(assigns) do
     ~F"""
-    <TmiCard :for={card <- @cards} card={card} />
+    <AppLayout>
+      <TmiCard :for={card <- @cards} card={card} />
+    </AppLayout>
     """
   end
 

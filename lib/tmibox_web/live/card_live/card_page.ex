@@ -4,6 +4,7 @@ defmodule TmiboxWeb.Pages.CardPage do
   alias TmiboxWeb.Router.Helpers, as: Routes
   alias Tmibox.Zettelkasten
 
+  alias TmiboxWeb.Components.Layouts.AppLayout
   alias TmiboxWeb.Components.TmiCard
 
   data card, :map
@@ -11,7 +12,9 @@ defmodule TmiboxWeb.Pages.CardPage do
   @impl true
   def render(assigns) do
     ~F"""
-    <TmiCard card={@card} />
+    <AppLayout>
+      <TmiCard card={@card} />
+    </AppLayout>
     """
   end
 
