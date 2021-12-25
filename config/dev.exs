@@ -65,6 +65,21 @@ config :tmibox, TmiboxWeb.Endpoint,
     ]
   ]
 
+config :phoenix_live_reload,
+  dirs: [
+    "priv/static",
+    "priv/gettext",
+    "priv/catalogue",
+    "lib/tmibox_web/live",
+    "lib/tmibox_web/components",
+    "lib/tmibox_web/templates",
+    "lib/tmibox_web/views",
+  ],
+  backend: :fs_poll,
+  backend_opts: [
+    interval: 500
+  ]
+
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"
 
