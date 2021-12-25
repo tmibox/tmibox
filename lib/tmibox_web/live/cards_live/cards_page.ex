@@ -4,7 +4,7 @@ defmodule TmiboxWeb.Pages.CardsPage do
   alias Tmibox.Zettelkasten
 
   alias TmiboxWeb.Components.Layouts.AppLayout
-  alias TmiboxWeb.Components.TmiCard
+  alias TmiboxWeb.Components.TmiCardListEntry, as: TmiCard
 
   data cards, :list
 
