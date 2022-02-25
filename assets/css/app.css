@@ -5,8 +5,6 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-@import "./components.css";
-
 /* Alerts and form errors used by phx.new */
 .alert {
   padding: 15px;
