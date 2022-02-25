@@ -39,10 +39,10 @@ defmodule Tmibox.MixProject do
       {:ecto_sql, "~> 3.6"},
       {:postgrex, ">= 0.0.0"},
       {:phoenix_html, "~> 3.0"},
-      {:phoenix_live_reload, "~> 1.2", only: :dev},
-      {:phoenix_live_view, "~> 0.16.0"},
+      {:phoenix_live_reload, "~> 1.3.3", only: :dev},
+      {:phoenix_live_view, "~> 0.17.7"},
       {:floki, ">= 0.30.0", only: :test},
-      {:phoenix_live_dashboard, "~> 0.5"},
+      {:phoenix_live_dashboard, "~> 0.6.5"},
       {:esbuild, "~> 0.2", runtime: Mix.env() == :dev},
       {:swoosh, "~> 1.3"},
       {:telemetry_metrics, "~> 0.6"},
@@ -55,9 +55,9 @@ defmodule Tmibox.MixProject do
       {:kaffy,
        git: "https://github.com/teamwalnut/kaffy", ref: "2934d96b3c414256c1add6f6ab22de63b0abff0b"},
       {:ex_machina, "~> 2.7.0", only: :test},
-      {:surface, "~> 0.6.0"},
+      {:surface, "~> 0.7.1"},
       {:surface_formatter, "~> 0.6.0"},
-      {:surface_catalogue, "~> 0.2.0"}
+      {:surface_catalogue, "~> 0.3.0"}
     ]
   end
 
