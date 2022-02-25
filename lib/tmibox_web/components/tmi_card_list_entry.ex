@@ -14,12 +14,12 @@ defmodule TmiboxWeb.Components.TmiCardListEntry do
     card_id = assigns.card |> Map.get(:id, 0)
 
     ~F"""
-    <Link id={"tmi-card-#{card_id}"} to={Routes.live_path(TmiboxWeb.Endpoint, TmiboxWeb.Pages.CardPage, card_id)}>
-      <div class="tmi-card-list-entry card shadow-lg bordered">
+    <Link id={"tmi-card-#{card_id}"} class="cursor-pointer" to={Routes.live_path(TmiboxWeb.Endpoint, TmiboxWeb.Pages.CardPage, card_id)}>
+      <div class="tmi-card-list-entry my-9 mx-0 card shadow-lg bordered">
         <div class="card-body">
           <div class="card-body-wrapper">
-            <h2 class="card-title">{@card.title}</h2>
-            <p>{@card.content}</p>
+            <h2 class="card-title text-4xl pb-6">{@card.title}</h2>
+            <p class="text-2xl">{@card.content}</p>
           </div>
           <div class="card-actions justify-end">
             <div class="like-action flex items-center justify-center">
