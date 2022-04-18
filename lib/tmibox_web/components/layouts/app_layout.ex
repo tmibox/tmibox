@@ -11,6 +11,9 @@ defmodule TmiboxWeb.Components.Layouts.AppLayout do
   @doc "flash object"
   prop flash, :map, default: %{}
 
+  @doc "current logged in user"
+  prop current_user, :map, default: %{}
+
   @doc "The content of layout"
   slot default, required: true
 
@@ -46,21 +49,23 @@ defmodule TmiboxWeb.Components.Layouts.AppLayout do
               </div>
             </div>
             <div class="dropdown dropdown-end">
-              <label tabindex="0" class="btn btn-ghost btn-circle avatar">
-                <div class="w-10 rounded-full">
-                  <img src="https://api.lorem.space/image/face?hash=33791" />
-                </div>
-              </label>
-              <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                <li>
-                  <a class="justify-between">
-                    Profile
-                    <span class="badge">New</span>
-                  </a>
-                </li>
-                <li><a>Settings</a></li>
-                <li><a>Logout</a></li>
-              </ul>
+              {#if @current_user != %{}}
+                <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+                  <div class="w-10 rounded-full">
+                    <img src="https://api.lorem.space/image/face?hash=33791" />
+                  </div>
+                </label>
+                <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                  <li>
+                    <a class="justify-between">
+                      { @current_user.email }
+                      <span class="badge">New</span>
+                    </a>
+                  </li>
+                  <li><a>Settings</a></li>
+                  <li><a>Log out</a></li>
+                </ul>
+              {/if}
             </div>
           </div>
         </div>
