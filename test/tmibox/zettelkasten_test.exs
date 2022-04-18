@@ -16,7 +16,7 @@ defmodule Tmibox.ZettelkastenTest do
 
     test "get_card!/1 returns the card with given id" do
       card = insert(:card)
-      assert Zettelkasten.get_card!(card.id) == card
+      assert Zettelkasten.get_card(card.id) == card
     end
 
     test "create_card/1 with valid data creates a card" do
@@ -43,13 +43,13 @@ defmodule Tmibox.ZettelkastenTest do
     test "update_card/2 with invalid data returns error changeset" do
       card = insert(:card)
       assert {:error, %Ecto.Changeset{}} = Zettelkasten.update_card(card, @invalid_attrs)
-      assert card == Zettelkasten.get_card!(card.id)
+      assert card == Zettelkasten.get_card(card.id)
     end
 
     test "delete_card/1 deletes the card" do
       card = insert(:card)
       assert {:ok, %Card{}} = Zettelkasten.delete_card(card)
-      assert_raise Ecto.NoResultsError, fn -> Zettelkasten.get_card!(card.id) end
+      assert nil == Zettelkasten.get_card(card.id)
     end
 
     test "change_card/1 returns a card changeset" do
