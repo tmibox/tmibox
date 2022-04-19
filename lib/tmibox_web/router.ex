@@ -6,6 +6,7 @@ defmodule TmiboxWeb.Router do
   import Surface.Catalogue.Router
 
   pipeline :browser do
+    plug Ueberauth
     plug :accepts, ["html"]
     plug :fetch_session
     plug :fetch_live_flash
@@ -109,5 +110,12 @@ defmodule TmiboxWeb.Router do
     post "/users/confirm", UserConfirmationController, :create
     get "/users/confirm/:token", UserConfirmationController, :edit
     post "/users/confirm/:token", UserConfirmationController, :update
+  end
+
+  scope "/auth", TmiboxWeb do
+    pipe_through [:browser, :redirect_if_user_is_authenticated]
+
+    get "/:provider", AuthController, :request
+    get "/:provider/callback", AuthController, :callback
   end
 end

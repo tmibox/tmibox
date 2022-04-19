@@ -16,6 +16,10 @@ config :tmibox, TmiboxWeb.Endpoint,
 # Do not print debug messages in production
 config :logger, level: :info
 
+config :ueberauth, Ueberauth.Strategy.Github.OAuth,
+  client_id: System.get_env("GITHUB_CLIENT_ID"),
+  client_secret: System.get_env("GITHUB_CLIENT_SECRET")
+
 # ## SSL Support
 #
 # To get SSL working, you will need to add the `https` key

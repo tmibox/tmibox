@@ -58,7 +58,9 @@ defmodule Tmibox.MixProject do
       {:ex_machina, "~> 2.7.0", only: :test},
       {:surface, "~> 0.7.1"},
       {:surface_formatter, "~> 0.6.0"},
-      {:surface_catalogue, "~> 0.3.0"}
+      {:surface_catalogue, "~> 0.3.0"},
+      {:ueberauth, "~> 0.7"},
+      {:ueberauth_github, "~> 0.7"}
     ]
   end
 
