@@ -20,7 +20,7 @@ defmodule TmiboxWeb.Components.Layouts.AppLayout do
   def render(assigns) do
     ~F"""
     <header>
-      <section class="container max-w-screen-md mx-auto">
+      <section class="container max-w-screen-lg mx-auto">
         <div class="navbar bg-base-100 justify-between">
           <div class="flex-1">
             <a
@@ -71,7 +71,7 @@ defmodule TmiboxWeb.Components.Layouts.AppLayout do
         </div>
       </section>
     </header>
-    <main class="container max-w-screen-md mx-auto">
+    <main class="container max-w-screen-lg mx-auto">
       <p class="alert alert-info" role="alert"
         phx-click="lv:clear-flash"
         phx-value-key="info">{ live_flash(@flash, :info) }</p>

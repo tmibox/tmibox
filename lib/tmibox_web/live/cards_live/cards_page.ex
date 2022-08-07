@@ -14,7 +14,9 @@ defmodule TmiboxWeb.Pages.CardsPage do
   def render(assigns) do
     ~F"""
     <AppLayout current_user={@current_user}>
-      <TmiCard :for={card <- @cards} card={card} />
+      <div class="grid grid-cols-2 gap-x-4">
+        <TmiCard :for={card <- @cards} card={card} />
+      </div>
     </AppLayout>
     """
   end
