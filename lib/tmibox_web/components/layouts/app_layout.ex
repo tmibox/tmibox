@@ -23,10 +23,7 @@ defmodule TmiboxWeb.Components.Layouts.AppLayout do
       <section class="container max-w-screen-lg mx-auto">
         <div class="navbar bg-base-100 justify-between">
           <div class="flex-1">
-            <a
-              class="btn btn-ghost normal-case text-xl"
-              href="/"
-            >
+            <a class="btn btn-ghost normal-case text-xl" href="/">
               TMI Box
             </a>
           </div>
@@ -34,7 +31,18 @@ defmodule TmiboxWeb.Components.Layouts.AppLayout do
             <div class="dropdown dropdown-end">
               <label tabindex="0" class="btn btn-ghost btn-circle">
                 <div class="indicator">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  ><path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                    /></svg>
                   <span class="badge badge-sm indicator-item">8</span>
                 </div>
               </label>
@@ -52,13 +60,16 @@ defmodule TmiboxWeb.Components.Layouts.AppLayout do
               {#if @current_user != %{}}
                 <label tabindex="0" class="btn btn-ghost btn-circle avatar">
                   <div class="w-10 rounded-full">
-                    <img src="https://api.lorem.space/image/face?hash=33791" />
+                    <img src="https://api.lorem.space/image/face?hash=33791">
                   </div>
                 </label>
-                <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                <ul
+                  tabindex="0"
+                  class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+                >
                   <li>
                     <a class="justify-between">
-                      { @current_user.email }
+                      {@current_user.email}
                       <span class="badge">New</span>
                     </a>
                   </li>
@@ -72,13 +83,9 @@ defmodule TmiboxWeb.Components.Layouts.AppLayout do
       </section>
     </header>
     <main class="container max-w-screen-lg mx-auto">
-      <p class="alert alert-info" role="alert"
-        phx-click="lv:clear-flash"
-        phx-value-key="info">{ live_flash(@flash, :info) }</p>
+      <p class="alert alert-info" role="alert" phx-click="lv:clear-flash" phx-value-key="info">{live_flash(@flash, :info)}</p>
 
-      <p class="alert alert-danger" role="alert"
-        phx-click="lv:clear-flash"
-        phx-value-key="error">{ live_flash(@flash, :error) }</p>
+      <p class="alert alert-danger" role="alert" phx-click="lv:clear-flash" phx-value-key="error">{live_flash(@flash, :error)}</p>
 
       <#slot />
     </main>

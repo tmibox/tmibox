@@ -21,7 +21,11 @@ defmodule TmiboxWeb.Components.TmiCardListEntry do
     card_id = assigns.card |> Map.get(:id, 0)
 
     ~F"""
-    <Link id={"tmi-card-#{card_id}"} class="cursor-pointer" to={Routes.live_path(TmiboxWeb.Endpoint, TmiboxWeb.Pages.CardPage, card_id)}>
+    <Link
+      id={"tmi-card-#{card_id}"}
+      class="cursor-pointer"
+      to={Routes.live_path(TmiboxWeb.Endpoint, TmiboxWeb.Pages.CardPage, card_id)}
+    >
       <div class="tmi-card-list-entry my-4 mx-0 card shadow-lg bordered">
         <div class="card-body">
           <div class="card-body-wrapper">
