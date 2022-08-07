@@ -7,7 +7,7 @@ defmodule Tmibox.MixProject do
       version: "0.1.0",
       elixir: "~> 1.13",
       elixirc_paths: elixirc_paths(Mix.env()),
-      compilers: [:gettext] ++ Mix.compilers() ++ [:surface],
+      compilers: [:gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
       deps: deps()
@@ -56,8 +56,7 @@ defmodule Tmibox.MixProject do
       {:kaffy,
        git: "https://github.com/teamwalnut/kaffy", ref: "2934d96b3c414256c1add6f6ab22de63b0abff0b"},
       {:ex_machina, "~> 2.7.0", only: :test},
-      {:surface, "~> 0.7.1"},
-      {:surface_formatter, "~> 0.6.0"},
+      {:surface, "~> 0.7.5"},
       {:surface_catalogue, "~> 0.3.0"},
       {:ueberauth, "~> 0.7"},
       {:ueberauth_github, "~> 0.7"}

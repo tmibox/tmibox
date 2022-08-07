@@ -1,0 +1,1 @@
+call "%~dp0\tmibox" eval Tmibox.Release.migrate

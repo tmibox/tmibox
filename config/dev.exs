@@ -73,7 +73,7 @@ config :phoenix_live_reload,
     "lib/tmibox_web/live",
     "lib/tmibox_web/components",
     "lib/tmibox_web/templates",
-    "lib/tmibox_web/views",
+    "lib/tmibox_web/views"
   ],
   backend: :fs_poll,
   backend_opts: [
